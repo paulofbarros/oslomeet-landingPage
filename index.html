@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oslo Meet - Unindo Vozes Globais</title>
+    <meta name="description" content="Unindo vozes globais para grandes causas políticas, debates profundos e conscientização social. Compartilhe sua história sobre custo de vida.">
+    <meta property="og:title" content="Oslo Meet - Unindo Vozes Globais">
+    <meta property="og:description" content="Quer compartilhar sua história sobre custo de vida e sobrevivência financeira? Participe do Oslo Meet!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://oslomeet.org">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/><circle cx="60" cy="40" r="1" fill="white" opacity="0.05"/><circle cx="80" cy="80" r="1" fill="white" opacity="0.08"/><circle cx="30" cy="70" r="1" fill="white" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            padding: 0 20px;
+            z-index: 2;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -2px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .current-theme {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .theme-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .theme-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            margin: 3rem 0;
+        }
+        
+        .cta-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+        
+        /* Seção Sobre */
+        .about {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Como Participar */
+        .how-to-participate {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            background: #f8f9fa;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* Redes Sociais */
+        .social-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .social-link i {
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .theme-title {
+                font-size: 2rem;
+            }
+            
+            .cta-text {
+                font-size: 1.4rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .current-theme {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        /* Animações de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1 class="logo">OSLO MEET</h1>
+            <p class="tagline">Unindo vozes globais para grandes causas políticas, debates profundos e conscientização social</p>
+            
+            <div class="current-theme">
+                <h2 class="theme-title">CUSTO DE VIDA</h2>
+                <p class="theme-subtitle">& Sobrevivência Financeira</p>
+            </div>
+            
+            <div class="cta-section">
+                <p class="cta-text">Quer compartilhar sua história?</p>
+                <a href="https://forms.gle/DzNFvJHUZECNs1CPA" target="_blank" class="cta-button">
+                    📝 PARTICIPE AGORA
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+    
+    <!-- Sobre o Projeto -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre o Oslo Meet</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Oslo Meet é uma plataforma que busca dar voz às pessoas reais, criando espaços para debates profundos sobre questões que realmente importam no nosso dia a dia.</p>
+                    
+                    <p>Começamos falando sobre <strong>custo de vida e sobrevivência financeira</strong> porque sabemos que este é um desafio universal que afeta a todos nós, mas do qual poucos falam abertamente.</p>
+                    
+                    <p>Queremos ouvir suas estratégias, suas dificuldades, suas vitórias e seus aprendizados. Sua história pode inspirar e ajudar outras pessoas que passam pelos mesmos desafios.</p>
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Nossa Missão</h3>
+                    <p>Criar um espaço onde vozes autênticas se encontram para discutir, aprender e transformar realidades através do compartilhamento de experiências genuínas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Como Participar -->
+    <section class="how-to-participate">
+        <div class="container">
+            <h2 class="section-title">Como Participar</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Preencha o Formulário</h3>
+                    <p>Conte um pouco sobre você e sua história relacionada ao custo de vida</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Seleção e Contato</h3>
+                    <p>Analisaremos as inscrições e entraremos em contato para agendar sua participação</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Gravação</h3>
+                    <p>Participação em podcast/entrevista para compartilhar sua experiência</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Impacto</h3>
+                    <p>Sua história ajuda outras pessoas e contribui para debates importantes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Redes Sociais -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">Siga-nos nas Redes</h2>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-facebook-f" style="color: #1877f2;"></i>
+                    <span>Facebook</span>
+                </a>
+                
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter" style="color: #1da1f2;"></i>
+                    <span>Twitter/X</span>
+                </a>
+                
+                <a href="#" class="social-link">
+                    <i class="fab fa-youtube" style="color: #ff0000;"></i>
+                    <span>YouTube</span>
+                </a>
+                
+                <a href="#" class="social-link">
+                    <i class="fas fa-globe" style="color: #667eea;"></i>
+                    <span>Website</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">OSLO MEET</div>
+                <div class="footer-links">
+                    <a href="https://oslomeet.org">www.oslomeet.org</a>
+                    <a href="https://linktr.ee/oslomeet">Linktree</a>
+                    <a href="mailto:oslomeet1@gmail.com">Contato</a>
+                </div>
+                <div>&copy; 2025 Oslo Meet. Unindo vozes globais.</div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Animação suave ao rolar
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('fade-in');
+                }
+            });
+        });
+        
+        // Smooth scroll para o indicador
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.about').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Tracking de cliques no CTA
+        document.querySelector('.cta-button').addEventListener('click', () => {
+            console.log('CTA clicked - Form access');
+            // Aqui você pode adicionar Google Analytics ou outros trackings
+        });
+    </script>
+</body>
+</html>
